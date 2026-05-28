@@ -1,0 +1,23 @@
+{
+  "scenario_id": "saas_pm_tools",
+  "section_completeness": 0.875,
+  "source_coverage": 0.65,
+  "citation_density_per_1k": 2.3,
+  "schema_compliance": 0.857,
+  "trace_completeness": 0.92,
+  "qa_loop": {
+    "total_iterations": 1,
+    "initial_score": 0.55,
+    "final_score": 0.82,
+    "improvement": 0.27,
+    "converged": true
+  },
+  "report_length_chars": 4520,
+  "competitor_count": 3,
+  "overall_score": 0.726,
+  "elapsed_ms": 45200,
+  "threshold_check": {
+    "passed": true,
+    "failed": []
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "2.0",
+  "run_id": "20250527_143022_a1b2c3d4",
+  "mode": "competitive_analysis",
+  "query": "Compare Notion vs Obsidian vs Logseq",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "nodes": [
+    {"node": "collector", "latency_ms": 12500, "status": "ok"},
+    {"node": "analyst", "latency_ms": 8300, "status": "ok"},
+    {"node": "writer", "latency_ms": 6200, "status": "ok"},
+    {"node": "qa_agent", "latency_ms": 3100, "status": "ok", "metadata": {"quality": "needs_revision", "action": "retry_writer"}},
+    {"node": "writer", "latency_ms": 5800, "status": "ok"},
+    {"node": "qa_agent", "latency_ms": 2900, "status": "ok", "metadata": {"quality": "pass", "action": "accept"}}
+  ],
+  "llm_calls": [
+    {"call_id": "L1", "model": "deepseek-chat", "latency_ms": 2100, "prompt_chars": 800, "response_chars": 1200},
+    {"call_id": "L2", "model": "deepseek-chat", "latency_ms": 3400, "prompt_chars": 3200, "response_chars": 2800}
+  ],
+  "tool_calls": [
+    {"tool_call_id": "T1", "source": "tavily", "query": "Notion features 2024", "latency_ms": 1200, "result_count": 5},
+    {"tool_call_id": "T2", "source": "tavily", "query": "Obsidian pricing", "latency_ms": 980, "result_count": 4}
+  ],
+  "qa_feedback_loops": [
+    {"iteration": 1, "issues": ["Missing source citations in SWOT section"], "target_agent": "writer", "action": "retry_writer"}
+  ],
+  "metrics": {
+    "section_completeness": 0.875,
+    "source_coverage": 0.72,
+    "schema_compliance": 0.85,
+    "overall_score": 0.73
+  }
+}
